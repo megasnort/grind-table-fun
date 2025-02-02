@@ -10,7 +10,7 @@ f = Figlet(font='slant')
 
 def say(text):
     if platform.system() == 'Darwin':
-        os.system(text)
+        os.system('say ' + text)
 
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -94,7 +94,7 @@ def game():
             if response != t[3]:
                 points -= 1
                 print('\033[91mFOUT!!!\033[0m')
-                say( "say FOUT!")
+                say("FOUT!")
             else:
                 break
 
@@ -104,28 +104,28 @@ def game():
 
         if difference < 1:
             print('\033[92mULTRAMEGASPEEDMONSTER!!!!!!\033[0m')    
-            say( "say ultraspeedmonster!")
+            say("ultraspeedmonster!")
             points += 5
         elif difference < 2:
             print('\033[94mMEGASPEEDMONSTER!!!!!!\033[0m')    
-            say( "say mega speed monster!")
+            say("mega speed monster!")
             points += 4
         elif difference < 3:
             print('\033[96mSUPERSPEEDMONSTER!!!!!!\033[0m')    
-            say( "say super speed monster!")
+            say("super speed monster!")
             points += 3
         elif difference < 4:
             print('\033[93mSPEEDMONSTER!!!!!!\033[0m')    
-            say( "say speed monster!")
+            say("speed monster!")
             points += 2
         elif difference < 5:
             print('\033[95mLITTLE SPEEDMONSTER!!!!!!\033[0m')    
-            say( "say little speed monster!")
+            say("little speed monster!")
             points += 1
 
     print('')
     print('Je hebt ' + str(points) + ' punten.')
-    say('say You have ' + str(points) + ' points.')
+    say('You have ' + str(points) + ' points.')
     print('')
 
     name = None
@@ -133,10 +133,10 @@ def game():
     if points > lowest or len(scores) < highscores_length:
         if points > highest:
             print('TOPSCORE!!!')
-            say('say Topscore!')
+            say('Topscore!')
         else:
             print('Highscore!')
-            say('say Highscore!')
+            say('Highscore!')
         
         print('')
         
